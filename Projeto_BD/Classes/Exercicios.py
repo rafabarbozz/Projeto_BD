@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-@dataclass
+@dataclass()
 class Exercicios:
     id_exercicio: int
     nome_exercicio: str
