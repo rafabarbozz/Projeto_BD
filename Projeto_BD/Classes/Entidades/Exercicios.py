@@ -10,6 +10,7 @@ class Exercicios:
     tecnica_avancada: str
     tipo_treino: str
     
+    
     # Métodos para pegar dados
     def get_id_exercicio(self):
         return self.id_exercicio
@@ -31,6 +32,7 @@ class Exercicios:
     
     def get_tipo_treino(self):
         return self.tipo_treino
+
 
     # Médotos para alteração de dados
     # obs.: id_exercicio será imutável

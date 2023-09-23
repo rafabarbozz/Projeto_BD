@@ -25,6 +25,7 @@ class Treina:
     def alterar_aluno_id(self, novo_aluno_id: int):
         self.aluno_id - novo_aluno_id
         
+        
     # Construtor
     def __eq__(self, other):
         if type(other) != Treina:

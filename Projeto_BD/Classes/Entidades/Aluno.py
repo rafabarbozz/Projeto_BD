@@ -8,6 +8,7 @@ class Aluno:
     sexo_aluno: str
     medida_id: int
     
+    
     # Métodos para pegar dados
     def get_id_aluno(self):
         return self.id_aluno
@@ -38,6 +39,7 @@ class Aluno:
         
     def alterar_medida_id(self, nova_medida_id: int):
         self.medida_id = nova_medida_id
+    
     
     # Construtor
     def __init__(self, id: int, numero_integrantes: int, consumo_total: float, pago: bool):

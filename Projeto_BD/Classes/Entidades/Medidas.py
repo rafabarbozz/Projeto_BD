@@ -11,6 +11,7 @@ class Medidas:
     cintura: float
     peso: float
     
+    
     # Métodos para adquirir dados:
     def get_id_medida(self):
         return self.id_medida
