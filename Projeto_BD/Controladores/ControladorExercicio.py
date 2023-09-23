@@ -103,17 +103,6 @@ def pesquisar_por_id(id: int, conn: connection):
 
 
 # Funçöes para remover dados
-def remover_por_id(id: int, conn: connection):
-    with conn.cursor(row_factory=class_row(Exercicios)) as cur:
-        cur.execute("DELETE FROM exercicios WHERE id_exercicio = %s RETURNING *", (id,))
-        temp = cur.fetchone()
-        
-        if temp is None:
-            raise HTTPException(status_code=404)
-        
-        return temp
-
-
 def remover_por_nome(nome: str, conn: connection):
     with conn.cursor(row_factory=class_row(Exercicios)) as cur:
         cur.execute("DELETE FROM exercicios WHERE nome_exercicio = %s RETURNING *", (nome,))
@@ -123,7 +112,16 @@ def remover_por_nome(nome: str, conn: connection):
             raise HTTPException(status_code=404)
         
         return temp
-
+def remover_por_id(id: int, conn: connection):
+    with conn.cursor(row_factory=class_row(Exercicios)) as cur:
+        cur.execute("DELETE FROM exercicios WHERE id_exercicio = %s RETURNING *", (id,))
+        temp = cur.fetchone()
+        
+        if temp is None:
+            raise HTTPException(status_code=404)
+        
+        return temp
+    
 
 # Função para listar tudo
 def listar_exercicios(conn: connection):
