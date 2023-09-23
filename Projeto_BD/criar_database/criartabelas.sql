@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS exercicios(
     id_exercicio SERIAL PRIMARY KEY,
-    nome_exercicio TEXT NOT NULL,
+    nome_exercicio TEXT NOT NULL UNIQUE,
     qtd_series INTEGER NOT NULL,
     qtd_reps INTEGER NOT NULL,
     tempo_descanso INTEGER NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS medidas(
 CREATE TABLE IF NOT EXISTS aluno(
     id_aluno SERIAL PRIMARY KEY,
     nome_aluno TEXT NOT NULL,
-    cpf_aluno TEXT NOT NULL,
+    cpf_aluno TEXT NOT NULL UNIQUE,
     sexo_aluno CHAR(1) NOT NULL CONSTRAINT sexo_check CHECK(sexo_aluno in ('M', 'F')),
     medida_id INT NOT NULL UNIQUE,
     CONSTRAINT fk_aluno_medida FOREIGN KEY (medida_id) REFERENCES medidas(id_medida)
