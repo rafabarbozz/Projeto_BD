@@ -8,7 +8,6 @@ class Aluno:
     sexo_aluno: str
     medida_id: int
     
-    
     # Métodos para pegar dados
     def get_id_aluno(self):
         return self.id_aluno
