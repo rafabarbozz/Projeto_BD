@@ -12,6 +12,7 @@ def criar_exercicio(nome_exercicio: str, qtd_series: int, qtd_reps: int, tempo_d
                     nome_exercicio, qtd_series, qtd_reps, tempo_descanso, tecnica_avancada, tipo_treino)
 
 
+
 # Funções para alterar dados
 def alterar_nome_exercicio(id: int, novo_nome: str, conn: connection):
     with conn.cursor(row_factory=class_row(Exercicios)) as cur:
@@ -22,8 +23,7 @@ def alterar_nome_exercicio(id: int, novo_nome: str, conn: connection):
             raise HTTPException(status_code=404)
         
         return temp
-    
-    
+     
 def alterar_qtd_series(id: int, nova_qtd: int, conn: connection):
     with conn.cursor(row_factory=class_row(Exercicios)) as cur:
         cur.execute("UPDATE exercicios SET qtd_series = %s WHERE id_exercicio = %s", (nova_qtd, id))
@@ -34,7 +34,6 @@ def alterar_qtd_series(id: int, nova_qtd: int, conn: connection):
         
         return temp
     
-
 def alterar_qtd_reps(id: int, nova_qtd: int, conn: connection):
     with conn.cursor(row_factory=class_row(Exercicios)) as cur:
         cur.execute("UPDATE exercicios SET qtd_reps = %s WHERE id_exercicio = %s", (nova_qtd, id))
@@ -44,7 +43,6 @@ def alterar_qtd_reps(id: int, nova_qtd: int, conn: connection):
             raise HTTPException(status_code=404)
         
         return temp
-
 
 def alterar_tempo_descanso(id: int, novo_tempo: int, conn: connection):
     with conn.cursor(row_factory=class_row(Exercicios)) as cur:
@@ -56,7 +54,6 @@ def alterar_tempo_descanso(id: int, novo_tempo: int, conn: connection):
         
         return temp
 
-
 def alterar_tecnica_avancada(id: int, nova_tecnica: str, conn: connection):
     with conn.cursor(row_factory=class_row(Exercicios)) as cur:
         cur.execute("UPDATE exercicios SET tecnica_avancada = %s WHERE id_exercicio = %s", (nova_tecnica, id))
@@ -67,7 +64,6 @@ def alterar_tecnica_avancada(id: int, nova_tecnica: str, conn: connection):
         
         return temp
 
-
 def alterar_tipo_treino(id: int, novo_tipo: str, conn: connection):
     with conn.cursor(row_factory=class_row(Exercicios)) as cur:
         cur.execute("UPDATE exercicios SET tipo_treino = %s WHERE id_exercicio = %s", (novo_tipo, id))
@@ -77,6 +73,7 @@ def alterar_tipo_treino(id: int, novo_tipo: str, conn: connection):
             raise HTTPException(status_code=404)
         
         return temp
+
 
 
 # Funções para pesquisar dados
@@ -90,7 +87,6 @@ def pesquisar_por_nome(nome: str, conn: connection):
         
         return temp
 
-
 def pesquisar_por_id(id: int, conn: connection):
     with conn.cursor(row_factory=class_row(Exercicios)) as cur:
         cur.execute("SELECT * FROM exercicios WHERE id_exercicio = %s", (id,))
@@ -100,6 +96,7 @@ def pesquisar_por_id(id: int, conn: connection):
             raise HTTPException(status_code=404)
         
         return temp
+
 
 
 # Funçöes para remover dados
@@ -113,7 +110,6 @@ def remover_por_nome(nome: str, conn: connection):
         
         return temp
     
-    
 def remover_por_id(id: int, conn: connection):
     with conn.cursor(row_factory=class_row(Exercicios)) as cur:
         cur.execute("DELETE FROM exercicios WHERE id_exercicio = %s RETURNING *", (id,))
@@ -124,6 +120,7 @@ def remover_por_id(id: int, conn: connection):
         
         return temp
     
+
 
 # Função para listar tudo
 def listar_exercicios(conn: connection):
