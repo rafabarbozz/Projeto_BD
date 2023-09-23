@@ -6,6 +6,7 @@ class Treina:
     exercicio_id: int
     aluno_id: int
     
+    
     # Métodos para adquirir dados
     def get_id_treino(self):
         return self.id_treino
