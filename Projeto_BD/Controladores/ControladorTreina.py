@@ -93,11 +93,6 @@ def deletar_por_tecnica_avancada(exercicio: Exercicios, conn: connection):
 
 
 # Funções para listar tudo
-def listar_treina(conn: connection):
-    with conn.cursor(row_factory=class_row(Treina)) as cur:
-        cur.execute("SELECT * FROM treina ORDER BY id_treino")
-        return cur.fetchall() 
-    
 def listar_treino_aluno(conn: connection):
     with conn.cursor(row_factory=class_row(Treina)) as cur:
         cur.execute("SELECT * FROM treino_aluno ORDER BY id_aluno")
