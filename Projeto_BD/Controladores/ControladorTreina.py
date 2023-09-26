@@ -1,5 +1,3 @@
-from fastapi import HTTPException
-
 from psycopg.rows import class_row, dict_row
 
 from Controladores import ControladorExercicio, ControladorAluno
