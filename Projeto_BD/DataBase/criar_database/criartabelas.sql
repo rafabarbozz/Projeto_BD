@@ -40,7 +40,8 @@ CREATE TABLE IF NOT EXISTS treina(
 );
 
 CREATE OR REPLACE VIEW treino_aluno AS 
-    SELECT aluno.nome_aluno AS Nome, aluno.id_aluno AS Id_aluno, exercicios.nome_exercicio AS Exercicio, exercicios.qtd_series
+    SELECT aluno.nome_aluno AS Nome, aluno.id_aluno AS Id_aluno, exercicios.nome_exercicio AS Exercicio, 
+    exercicios.id_exercicio AS Id_exercicio, exercicios.qtd_series
     AS Series, exercicios.qtd_reps AS Reps, exercicios.tempo_descanso AS Descanso, 
     exercicios.tecnica_avancada AS Tecnica, exercicios.tipo_treino AS tipo_treino
     FROM treina
