@@ -1,5 +1,5 @@
 from psycopg2 import connect, DatabaseError
-from DB_config.config_db import config
+from DataBase.DB_config.config_db import config
 
 # Função para criar um exercício novo
 def criar_exercicio(nome_exercicio: str, qtd_series: int, qtd_reps: int, tempo_descanso:int,
@@ -156,8 +156,6 @@ def pesquisar_por_nome(nome: str): # Funcionando
         params = config()
         with connect(**params) as conn:
             with conn.cursor() as cur:
-                #insert_script = 'SELECT * FROM exercicios WHERE nome_exercicio = %s'
-                #insert_value = (nome)
                 cur.execute('SELECT * FROM exercicios WHERE nome_exercicio = %s', (nome,))
                 
                 return cur.fetchone()
