@@ -64,14 +64,20 @@ class Medidas:
         
     # Construtor
     
-    def __init__(self, id: int, numero_integrantes: int, consumo_total: float, pago: bool):
-        self.id = id
-        self.numero_integrantes = numero_integrantes
-        self.consumo_total = consumo_total
-        self.pago = pago
+    def __init__(self, id_medida: int, coxa_esq: float, coxa_dir: float, 
+                 braco_esq: float, braco_dir: float, altura: float, cintura: float, 
+                 peso: float):
+        self.id_medida = id_medida
+        self.coxa_esq = coxa_dir
+        self.coxa_esq = coxa_esq
+        self.braco_esq = braco_esq
+        self.braco_dir = braco_dir
+        self.altura = altura
+        self.cintura = cintura
+        self.peso = peso
 
     def __eq__(self, other):
         if type(other) != Medidas:
             return False
 
-        return True if self.id == other.__id_pedido else False
+        return True if self.id_medida == other.id_medida else False

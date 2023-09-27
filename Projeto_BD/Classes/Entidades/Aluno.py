@@ -42,15 +42,16 @@ class Aluno:
     
     
     # Construtor
-    def __init__(self, id: int, numero_integrantes: int, consumo_total: float, pago: bool):
-        self.id = id
-        self.numero_integrantes = numero_integrantes
-        self.consumo_total = consumo_total
-        self.pago = pago
+    def __init__(self, id_aluno: int, cpf: str, nome: str, sexo: str, medida_id: int):
+        self.id_aluno = id_aluno 
+        self.cpf_aluno = cpf
+        self.nome_aluno = nome
+        self.sexo_aluno = sexo
+        self.medida_id = medida_id
 
     def __eq__(self, other):
         if type(other) != Aluno:
             return False
 
-        return True if self.id == other.__id_pedido else False
+        return True if self.id_aluno == other.id_aluno else False
         

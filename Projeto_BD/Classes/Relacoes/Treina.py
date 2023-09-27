@@ -28,15 +28,12 @@ class Treina:
         
         
     # Construtor
+    def __int__(self, id_treino: int, exercicio_id: int, aluno_id: int):
+        self.id_treino = id_treino
+        self.exercicio_id = exercicio_id
+        self.aluno_id = aluno_id
+        
     def __eq__(self, other):
         if type(other) != Treina:
             return False
-        return True if self.id_pedido == other.id_pedido else False
-
-    def __int__(self, id_pedido: int, id_mesa: int, id_prato: int, quantidade: int, entregue: bool, data: date):
-        self.id_pedido = id_pedido
-        self.id_mesa = id_mesa
-        self.id_prato = id_prato
-        self.quantidade = quantidade
-        self.entregue = entregue
-        self.data = data
+        return True if self.id_treino == other.id_treino else False

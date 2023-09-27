@@ -70,5 +70,5 @@ class Exercicios:
         if type(other) != Exercicios:
             return False
 
-        return True if self.id == other.__id_pedido else False
+        return True if self.id_exercicio == other.id_exercicio else False
     
