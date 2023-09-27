@@ -2,7 +2,7 @@ from configparser import ConfigParser
 
 # Function that gets what is inside de file database.ini and associate to each
 # variable
-def config(filename="database.ini", section="postgresql"):
+def config(filename="DB_config/database.ini", section="postgresql"):
     #creat parser
     parser = ConfigParser()
     
