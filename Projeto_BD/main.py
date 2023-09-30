@@ -2,7 +2,7 @@ from Controladores.ControladorExercicio import GerenciadorExercicio
 from Controladores.ControladorAluno import GerenciadorAluno
 from Controladores.ControladorMedidas import GerenciadorMedidas
 from Controladores.ControladorTreina import GerenciadorTreina
-from menus import menu_exercicio, menu_principal
+from menus import menu_tabela, menu_principal
 from DataBase.DB_config.config_db import config
 from psycopg2 import connect, DatabaseError
 
@@ -12,7 +12,7 @@ opcao = menu_principal()
 
 if (opcao == 1):
     # Manipulação da tabela Exercicios
-    opcao_exercicio = menu_exercicio()
+    opcao_exercicio = menu_tabela('Exercicio')
         
         
     if (opcao_exercicio == 1): # Criar dados
