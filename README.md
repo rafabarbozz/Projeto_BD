@@ -7,7 +7,7 @@ Sistema que gerencia alunos de um personal trainer
 # Modelagem UML
 
 ## Diagrama Entidade_Relacionamento
-![Diagrama ER](Projeto_BD/modelagem/Diagrama_ER.png)
+![Diagrama ER](Projeto_BD/DataBase/modelagem/Diagrama_ER.png)
 
 
 ## Modelagem Relacional
