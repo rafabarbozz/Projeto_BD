@@ -150,24 +150,6 @@ class GerenciadorExercicio:
 
 
     # Funções para pesquisar dados
-    def pesquisar_por_nome(nome: str): # Funcionando
-        connection = None
-        
-        try:
-            params = config()
-            with connect(**params) as conn:
-                with conn.cursor() as cur:
-                    cur.execute('SELECT * FROM exercicios WHERE nome_exercicio = %s', (nome,))
-                    
-                    return cur.fetchone()
-                    
-        except (Exception, DatabaseError) as error:
-            print(error)
-            
-        finally:
-            if connection is not None:
-                connection.close()                
-
     def pesquisar_por_id(id: int): # Funcionando
         connection = None
         
@@ -185,6 +167,114 @@ class GerenciadorExercicio:
         finally:
             if connection is not None:
                 connection.close() 
+                
+    def pesquisar_por_nome(nome: str): # Funcionando
+        connection = None
+        
+        try:
+            params = config()
+            with connect(**params) as conn:
+                with conn.cursor() as cur:
+                    cur.execute('SELECT * FROM exercicios WHERE nome_exercicio = %s', (nome,))
+                    
+                    return cur.fetchone()
+                    
+        except (Exception, DatabaseError) as error:
+            print(error)
+            
+        finally:
+            if connection is not None:
+                connection.close()
+                
+    def pesquisar_por_qtd_series(qtd: int): # Funcionando
+        connection = None
+        
+        try:
+            params = config()
+            with connect(**params) as conn:
+                with conn.cursor() as cur:
+                    cur.execute('SELECT * FROM exercicios WHERE qtd_series = %s', (qtd,))
+                    
+                    return cur.fetchone()
+                    
+        except (Exception, DatabaseError) as error:
+            print(error)
+            
+        finally:
+            if connection is not None:
+                connection.close() 
+                
+    def pesquisar_por_qtd_reps(qtd: int): # Funcionando
+        connection = None
+        
+        try:
+            params = config()
+            with connect(**params) as conn:
+                with conn.cursor() as cur:
+                    cur.execute('SELECT * FROM exercicios WHERE qtd_reps = %s', (qtd,))
+                    
+                    return cur.fetchone()
+                    
+        except (Exception, DatabaseError) as error:
+            print(error)
+            
+        finally:
+            if connection is not None:
+                connection.close()   
+                
+    def pesquisar_por_tempo_descanso(qtd: int): # Funcionando
+        connection = None
+        
+        try:
+            params = config()
+            with connect(**params) as conn:
+                with conn.cursor() as cur:
+                    cur.execute('SELECT * FROM exercicios WHERE tempo_descanso = %s', (qtd,))
+                    
+                    return cur.fetchone()
+                    
+        except (Exception, DatabaseError) as error:
+            print(error)
+            
+        finally:
+            if connection is not None:
+                connection.close()    
+                
+    def pesquisar_por_tecnica(tecnica: str): # Funcionando
+        connection = None
+        
+        try:
+            params = config()
+            with connect(**params) as conn:
+                with conn.cursor() as cur:
+                    cur.execute('SELECT * FROM exercicios WHERE tecnica_avancada = %s', (tecnica,))
+                    
+                    return cur.fetchone()
+                    
+        except (Exception, DatabaseError) as error:
+            print(error)
+            
+        finally:
+            if connection is not None:
+                connection.close()   
+                
+    def pesquisar_por_tipo_treino(tipo: str): # Funcionando
+        connection = None
+        
+        try:
+            params = config()
+            with connect(**params) as conn:
+                with conn.cursor() as cur:
+                    cur.execute('SELECT * FROM exercicios WHERE tipo_treino = %s', (tipo,))
+                    
+                    return cur.fetchone()
+                    
+        except (Exception, DatabaseError) as error:
+            print(error)
+            
+        finally:
+            if connection is not None:
+                connection.close()  
 
 
 
