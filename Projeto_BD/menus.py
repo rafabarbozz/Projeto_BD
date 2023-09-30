@@ -26,35 +26,34 @@ def menu_principal():
         
     return opcao
         
-def menu_exercicio():
+def menu_tabela(tabela: str):
     print("----------------------------------")
     print("      MENU      ".center(34, ' '))
     print("----------------------------------")
-    print("Opções para Exercicio:")
-    print("1 - Novo exercicio\n"
-          "2 - Remover exercicio\n"
-          "3 - Atualizar exercicio\n"
-          "4 - Procurar exercicio\n"
-          "5 - Listar toda tabela exercicio")
+    print(f"Opções para {tabela}:")
+    print(f"1 - Novo {tabela}\n"
+          f"2 - Remover {tabela}\n"
+          f"3 - Atualizar {tabela}\n"
+          f"4 - Procurar {tabela}\n"
+          f"5 - Listar toda tabela {tabela}")
     
-    opcao_exercicio = int(input("Digite a opção que deseja: "))
+    opcao_tabela = int(input("Digite a opção que deseja: "))
     print("\n")
     
-    while (opcao_exercicio < 1) or (opcao_exercicio > 6):
+    while (opcao_tabela  < 1) or (opcao_tabela  > 6):
         print("Opção inválida. Tente novamente!\n")
         
         print("----------------------------------")
         print("      MENU      ".center(34, ' '))
         print("----------------------------------")
-        print("Opções para Exercicio:")
-        print("1 - Novo exercicio\n"
-              "2 - Remover exercicio\n"
-              "3 - Atualizar exercicio\n"
-              "4 - Procurar exercicio por nome\n"
-              "5 - Procurar exercicio por id\n"
-              "6 - Listar toda tabela exercicio")
+        print("Opções para {tabela}:")
+        print(f"1 - Novo {tabela}\n"
+              f"2 - Remover {tabela}\n"
+              f"3 - Atualizar {tabela}\n"
+              f"4 - Procurar {tabela}\n"
+              f"5 - Listar toda tabela {tabela}")
         
-        opcao_exercicio = int(input("Digite a opção que deseja: "))
+        opcao_tabela  = int(input("Digite a opção que deseja: "))
         print("\n")
         
-    return opcao_exercicio
+    return opcao_tabela 
