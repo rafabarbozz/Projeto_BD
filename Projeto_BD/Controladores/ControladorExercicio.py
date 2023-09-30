@@ -159,7 +159,7 @@ class GerenciadorExercicio:
                 with conn.cursor() as cur:
                     cur.execute('SELECT * FROM exercicios WHERE id_exercicio = %s', (id,))
                     
-                    return cur.fetchall()
+                    return cur.fetchone()
                     
         except (Exception, DatabaseError) as error:
             print(error)
@@ -195,7 +195,7 @@ class GerenciadorExercicio:
                 with conn.cursor() as cur:
                     cur.execute('SELECT * FROM exercicios WHERE qtd_series = %s', (qtd,))
                     
-                    return cur.fetchone()
+                    return cur.fetchall()
                     
         except (Exception, DatabaseError) as error:
             print(error)
@@ -213,7 +213,7 @@ class GerenciadorExercicio:
                 with conn.cursor() as cur:
                     cur.execute('SELECT * FROM exercicios WHERE qtd_reps = %s', (qtd,))
                     
-                    return cur.fetchone()
+                    return cur.fetchall()
                     
         except (Exception, DatabaseError) as error:
             print(error)
@@ -222,16 +222,16 @@ class GerenciadorExercicio:
             if connection is not None:
                 connection.close()   
                 
-    def pesquisar_por_tempo_descanso(qtd: int): # Funcionando
+    def pesquisar_por_tempo_descanso(tempo: int): # Funcionando
         connection = None
         
         try:
             params = config()
             with connect(**params) as conn:
                 with conn.cursor() as cur:
-                    cur.execute('SELECT * FROM exercicios WHERE tempo_descanso = %s', (qtd,))
+                    cur.execute('select * from exercicios where tempo_descanso = %s', (tempo,))
                     
-                    return cur.fetchone()
+                    return cur.fetchall()
                     
         except (Exception, DatabaseError) as error:
             print(error)
@@ -249,7 +249,7 @@ class GerenciadorExercicio:
                 with conn.cursor() as cur:
                     cur.execute('SELECT * FROM exercicios WHERE tecnica_avancada = %s', (tecnica,))
                     
-                    return cur.fetchone()
+                    return cur.fetchall()
                     
         except (Exception, DatabaseError) as error:
             print(error)
@@ -267,7 +267,7 @@ class GerenciadorExercicio:
                 with conn.cursor() as cur:
                     cur.execute('SELECT * FROM exercicios WHERE tipo_treino = %s', (tipo,))
                     
-                    return cur.fetchone()
+                    return cur.fetchall()
                     
         except (Exception, DatabaseError) as error:
             print(error)
