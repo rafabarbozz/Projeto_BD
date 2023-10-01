@@ -241,7 +241,7 @@ class GerenciadorAluno:
 
 
     # Função para listar tudo
-    def listar_exercicios(): # Funcionando
+    def listar_alunos(): # Funcionando
         connection = None
         
         try:
