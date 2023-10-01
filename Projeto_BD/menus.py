@@ -18,8 +18,8 @@ def menu_principal():
         print("----------------------------------")
         print("Opções:")
         print("1 - Exercicio\n"
-            "2 - Aluno\n"
-            "3 - Medida")
+              "2 - Medida\n"
+              "3 - Aluno")
         
         opcao = int(input("Digite o que deseja gerenciar: "))
         print("\n")
