@@ -40,7 +40,7 @@ def menu_tabela(tabela: str):
     opcao_tabela = int(input("Digite a opção que deseja: "))
     print("\n")
     
-    while (opcao_tabela  < 1) or (opcao_tabela  > 6):
+    while (opcao_tabela  < 1) or (opcao_tabela  > 5):
         print("Opção inválida. Tente novamente!\n")
         
         print("----------------------------------")
