@@ -338,7 +338,7 @@ class GerenciadorMedidas:
         
 
     # Funções para listar tudo
-    def listar_exercicios(): # Funcionando
+    def listar_medidas(): # Funcionando
         connection = None
         
         try:
