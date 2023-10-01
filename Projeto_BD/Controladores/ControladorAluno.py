@@ -109,6 +109,24 @@ class GerenciadorAluno:
         
 
     # Funções para pesquisar dados
+    def pesquisar_por_id(id: int): # Funcionando
+        connection = None
+        
+        try:
+            params = config()
+            with connect(**params) as conn:
+                with conn.cursor() as cur:
+                    cur.execute('SELECT * FROM aluno WHERE id_aluno = %s', (id,))
+                    
+                    return cur.fetchone()
+                    
+        except (Exception, DatabaseError) as error:
+            print(error)
+            
+        finally:
+            if connection is not None:
+                connection.close() 
+                
     def pesquisar_por_nome(nome: str): # Funcionando
         connection = None
         
@@ -137,6 +155,24 @@ class GerenciadorAluno:
                     cur.execute('SELECT * FROM aluno WHERE cpf_aluno = %s', (cpf,))
                     
                     return cur.fetchone()
+                    
+        except (Exception, DatabaseError) as error:
+            print(error)
+            
+        finally:
+            if connection is not None:
+                connection.close() 
+    
+    def pesquisar_por_sexo(sexo: str): # Funcionando
+        connection = None
+        
+        try:
+            params = config()
+            with connect(**params) as conn:
+                with conn.cursor() as cur:
+                    cur.execute('SELECT * FROM aluno WHERE sexo_aluno = %s', (sexo,))
+                    
+                    return cur.fetchall()
                     
         except (Exception, DatabaseError) as error:
             print(error)
