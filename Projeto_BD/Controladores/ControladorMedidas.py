@@ -190,6 +190,132 @@ class GerenciadorMedidas:
         finally:
             if connection is not None:
                 connection.close()   
+                
+    def pesquisar_por_coxa_esq(coxa_esq: float):
+        connection = None
+        
+        try:
+            params = config()
+            with connect(**params) as conn:
+                with conn.cursor() as cur:
+                    cur.execute('SELECT * FROM medidas WHERE coxa_esq = %s', (coxa_esq,))
+                    
+                    return cur.fetchall()
+                    
+        except (Exception, DatabaseError) as error:
+            print(error)
+            
+        finally:
+            if connection is not None:
+                connection.close()
+        
+    def pesquisar_por_coxa_dir(coxa_dir: float):
+        connection = None
+        
+        try:
+            params = config()
+            with connect(**params) as conn:
+                with conn.cursor() as cur:
+                    cur.execute('SELECT * FROM medidas WHERE coxa_dir = %s', (coxa_dir,))
+                    
+                    return cur.fetchall()
+                    
+        except (Exception, DatabaseError) as error:
+            print(error)
+            
+        finally:
+            if connection is not None:
+                connection.close()
+        
+    def pesquisar_por_braco_esq(braco_esq: float):
+        connection = None
+        
+        try:
+            params = config()
+            with connect(**params) as conn:
+                with conn.cursor() as cur:
+                    cur.execute('SELECT * FROM medidas WHERE braco_esq = %s', (braco_esq,))
+                    
+                    return cur.fetchall()
+                    
+        except (Exception, DatabaseError) as error:
+            print(error)
+            
+        finally:
+            if connection is not None:
+                connection.close()
+        
+    def pesquisar_por_braco_dir(braco_dir: float):
+        connection = None
+        
+        try:
+            params = config()
+            with connect(**params) as conn:
+                with conn.cursor() as cur:
+                    cur.execute('SELECT * FROM medidas WHERE braco_dir = %s', (braco_dir,))
+                    
+                    return cur.fetchall()
+                    
+        except (Exception, DatabaseError) as error:
+            print(error)
+            
+        finally:
+            if connection is not None:
+                connection.close()
+        
+    def pesquisar_por_altura(altura: float):
+        connection = None
+        
+        try:
+            params = config()
+            with connect(**params) as conn:
+                with conn.cursor() as cur:
+                    cur.execute('SELECT * FROM medidas WHERE altura = %s', (altura,))
+                    
+                    return cur.fetchall()
+                    
+        except (Exception, DatabaseError) as error:
+            print(error)
+            
+        finally:
+            if connection is not None:
+                connection.close()
+        
+    def pesquisar_por_cintura(cintura: float):
+        connection = None
+        
+        try:
+            params = config()
+            with connect(**params) as conn:
+                with conn.cursor() as cur:
+                    cur.execute('SELECT * FROM medidas WHERE cintura = %s', (cintura,))
+                    
+                    return cur.fetchall()
+                    
+        except (Exception, DatabaseError) as error:
+            print(error)
+            
+        finally:
+            if connection is not None:
+                connection.close()
+        
+    def pesquisar_por_peso(peso: float):
+        connection = None
+        
+        try:
+            params = config()
+            with connect(**params) as conn:
+                with conn.cursor() as cur:
+                    cur.execute('SELECT * FROM medidas WHERE peso = %s', (peso,))
+                    
+                    return cur.fetchall()
+                    
+        except (Exception, DatabaseError) as error:
+            print(error)
+            
+        finally:
+            if connection is not None:
+                connection.close()
         
         
         
