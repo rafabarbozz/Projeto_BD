@@ -877,6 +877,7 @@ elif (opcao == 3):
             else:
                 print("Não foi possível listar os dados do alunos com esse sexo, pois ele não existe na tabela")
     
+    
     elif (opcao_aluno == 5): # Listar toda tabela
         resultado = [] 
         
