@@ -66,8 +66,6 @@ class GerenciadorMedidas:
         finally:
             if connection is not None:
                 connection.close()
-        
-
 
     def alterar_braco_esq(id: int, nova_medida: str): # Funcionando
         connection = None
@@ -88,7 +86,6 @@ class GerenciadorMedidas:
         finally:
             if connection is not None:
                 connection.close()
-        
 
     def alterar_braco_dir(id: int, nova_medida: str): #Funcionando
         connection = None
