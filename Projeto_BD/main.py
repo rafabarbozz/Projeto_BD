@@ -599,3 +599,252 @@ elif (opcao == 2):
         for i in resultado:
             print(i)
         
+    
+elif (opcao == 3):
+    # Manipulação da tabela aluno
+    opcao_aluno = menu_tabela('Aluno')
+    
+    
+    if (opcao_aluno == 1): # Criar dados
+        medida_id = 0
+        cpf_aluno = nome_aluno = sexo_aluno = ''
+           
+        nome_aluno = str(input("Digite o nome do aluno: "))
+        
+        connection = None
+        lista_cpf = [] # Vai conter todos os cpf da tabela aluno
+        lista_medida_id = [] # Vai conter todos as medida_id da tabela aluno
+        # Conectando ao banco de dados
+        try:
+            params = config()
+            with connect(**params) as conn:
+                with conn.cursor() as cur:
+                    cur.execute('SELECT cpf_aluno, medida_id FROM aluno')
+                    for i in cur.fetchall():
+                        lista_cpf.append(i[0])
+                        lista_medida_id.append(i[1])
+                
+        except (Exception, DatabaseError) as error:
+            print(error)
+            
+        finally:
+            if connection is not None:
+                connection.close() 
+                
+        cpf_aluno = str(input("Digite o cpf do aluno: "))
+        if (cpf_aluno in lista_cpf):
+            print("Esse cpf já está na tabela aluno!")
+        else:
+            sexo_aluno = str(input("Digite o sexo do aluno(M ou F): "))
+            while (sexo_aluno not in 'MF'):
+                print("Sexo inválido. Tente novamente!\n")
+                sexo_aluno = str(input("Digite o sexo do aluno(M ou F): "))
+            
+            medida_id = int(input("Digite o id das medidas associada a esse aluno: "))
+            if (medida_id in lista_medida_id):
+                print("Esse id já está associado a outro aluno!")
+            else:
+                if (GerenciadorAluno.criar_aluno(nome_aluno, cpf_aluno, sexo_aluno, medida_id) is not None):
+                    print("Aluno criado com sucesso!")
+                else:
+                    print("Não foi possível criar esse aluno!")
+    
+    
+    elif (opcao_aluno == 2): # Remover dados
+        atributo = 0
+        
+        print("Remover por:\n"
+              "1 - Id aluno\n"
+              "2 - Nome do aluno\n"
+              "3 - CPF do aluno")
+        
+        atributo = int(input("Digite a opção que deseja: "))
+        print("\n")
+        while (atributo < 1) or (atributo > 3):
+            print("Opção inválida. Tente novamente!\n")
+            print("Remover por:\n"
+                  "1 - Id aluno\n"
+                  "2 - Nome do aluno\n"
+                  "3 - CPF do aluno")
+        
+            atributo = int(input("Digite a opção que deseja: "))
+            print("\n")
+            
+        if (atributo == 1): # Remover por id
+            id = 0
+        
+            print("REMOVER POR ID")
+            id = int(input("Digite o id do aluno que deseja excluir: "))
+            
+            if (GerenciadorAluno.remover_por_id(id) is not None):
+                print("Aluno removido com sucesso!")
+            else:
+                print("Não foi possível remover esse aluno, pois ele não se encontra na tabela!")
+        
+        elif (atributo == 2): # Remover por nome
+            nome = ''
+            
+            print("REMOVER POR NOME")
+            nome = str(input("Digite o nome do aluno que deseja remover: "))
+            
+            if (GerenciadorAluno.remover_por_nome(nome) is not None):
+                print("Aluno removido com sucesso!")
+            else:
+                print("Não foi possível remover esse aluno, pois ele não se encontra na tabela!")
+        
+        elif (atributo == 3): # Remover por cpf
+            cpf = ''
+            
+            print("REMOVER POR CPF")
+            cpf = str(input("Digite o cpf do aluno que deseja remover: "))
+            
+            if (GerenciadorAluno.remover_por_cpf(cpf) is not None):
+                print("Aluno removido com sucesso!")
+            else:
+                print("Não foi possível remover esse aluno, pois ele não se encontra na tabela!")
+         
+                
+    elif(opcao_aluno == 3): # Atualizar dados
+        atributo = 0
+        
+        print("Procurar por:\n"
+              "1 - Nome do aluno\n"
+              "2 - CPF do aluno\n"
+              "3 - Sexo do aluno")
+        
+        atributo = int(input("Digite a opção que deseja: "))
+        print("\n")
+        while (atributo < 1) or (atributo > 3):
+            print("Opção inválida. Tente novamente!\n")
+            print("Procurar por:\n"
+              "1 - Nome do aluno\n"
+              "2 - CPF do aluno\n"
+              "3 - Sexo do aluno")
+            
+            atributo = int(input("Digite a opção que deseja: "))     
+            print("\n") 
+    
+        if (atributo == 1): # Atualizando nome 
+            id = 0
+            nome = ''
+            
+            print("ATUALIZAR NOME")
+            id = int(input("Digite o id do aluno que deseja alterar a nome: "))
+            nome = str(input("Digite o novo nome: "))
+            
+            if (GerenciadorAluno.alterar_nome(id, nome) is not None):
+                print("Nome alterado com sucesso!")
+            else:
+                print("Não foi possível alterar o nome do aluno, pois esse id não se encontra na tabela!")
+        
+        elif (atributo == 2): # Atualizando cpf
+            id = 0
+            cpf = ''
+            
+            print("ATUALIZAR CPF")
+            id = int(input("Digite o id do aluno que deseja alterar o CPF: "))
+            cpf = str(input("Digite o novo cpf: "))
+            
+            if (GerenciadorAluno.alterar_cpf(id, cpf) is not None):
+                print("CPF alterado com sucesso!")
+            else:
+                print("Não foi possível alterar o CPF do aluno, pois esse id não se encontra na tabela!")
+        
+        elif (atributo == 3): # Atualizando sexo
+            id = 0
+            sexo = ''
+            
+            print("ATUALIZAR SEXO")
+            id = int(input("Digite o id do aluno que deseja alterar o sexo: "))
+            sexo = str(input("Digite o novo sexo: "))
+            
+            if (GerenciadorAluno.alterar_sexo(id, sexo) is not None):
+                print("Sexo alterado com sucesso!")
+            else:
+                print("Não foi possível alterar o sexo do aluno, pois esse id não se encontra na tabela!")
+    
+    
+    elif (opcao_aluno == 4): # Pesquisar dados
+        atributo = 0
+        
+        print("Procurar por:\n"
+              "1 - Id do aluno\n"
+              "2 - Nome do aluno\n"
+              "3 - CPF do aluno\n"
+              "4 - Sexo do aluno")
+        
+        atributo = int(input("Digite a opção que deseja: "))
+        print("\n")
+        while (atributo < 1) or (atributo > 4):
+            print("Opção inválida. Tente novamente!\n")
+            print("Procurar por:\n"
+              "1 - Id do aluno\n"
+              "2 - Nome do aluno\n"
+              "3 - CPF do aluno\n"
+              "4 - Sexo do aluno")
+            
+            atributo = int(input("Digite a opção que deseja: "))
+            print("\n")
+            
+        if (atributo == 1): # Pesquisar por id
+            id = 0
+            resultado = []
+            
+            print("PESQUISAR POR ID")
+            id = int(input("Digite o id do aluno que deseja procurar: "))
+            resultado = GerenciadorAluno.pesquisar_por_id(id)
+            
+            if (resultado is not None):
+                for i in resultado:
+                    print(i, end=' ')
+            else:
+                print("Não foi possível listar o aluno com esse id, pois ele não existe na tabela")
+        
+        elif (atributo == 2): # Pesquisar por nome
+            nome = ''
+            resultado = []
+            
+            print("PESQUISAR POR NOME")
+            nome = str(input("Digite o nome do aluno que deseja procurar: "))
+            resultado = GerenciadorAluno.pesquisar_por_nome(nome)
+            
+            if (resultado is not None):
+                for i in resultado:
+                    print(i, end=' ')
+            else:
+                print("Não foi possível listar o aluno com esse nome, pois ele não existe na tabela")
+        
+        elif (atributo == 3): # Pesquisar por cpf
+            cpf = ''
+            resultado = []
+            
+            print("PESQUISAR POR CPF")
+            cpf = str(input("Digite o CPF do aluno que deseja procurar: "))
+            resultado = GerenciadorAluno.pesquisar_por_cpf(cpf)
+             
+            if (resultado is not None):
+                for i in resultado:
+                    print(i, end=' ')
+            else:
+                print("Não foi possível listar o aluno com esse CPF, pois ele não existe na tabela")
+                
+        elif (atributo == 4): # Pesquisar por sexo
+            sexo = ''
+            resultado = []
+            
+            print("PESQUISAR POR SEXO")
+            sexo = str(input("Digite o sexo do aluno que deseja procurar: "))
+            resultado = GerenciadorAluno.pesquisar_por_sexo(sexo)
+             
+            if (len(resultado) != 0):
+                for i in resultado:
+                    print(i)
+            else:
+                print("Não foi possível listar os dados do alunos com esse sexo, pois ele não existe na tabela")
+    
+    elif (opcao_aluno == 5): # Listar toda tabela
+        resultado = [] 
+        
+        resultado = GerenciadorAluno.listar_alunos()
+        for i in resultado:
+            print(i)
