@@ -183,6 +183,24 @@ class GerenciadorAluno:
         finally:
             if connection is not None:
                 connection.close()
+                
+    def remover_por_cpf(cpf: str): # Funcionando
+        connection = None
+        
+        try:
+            params = config()
+            with connect(**params) as conn:
+                with conn.cursor() as cur:
+                    cur.execute('DELETE FROM aluno WHERE cpf_aluno = %s RETURNING *', (cpf,))
+                    
+                    return cur.fetchone()
+                    
+        except (Exception, DatabaseError) as error:
+            print(error)
+            
+        finally:
+            if connection is not None:
+                connection.close()
 
 
 
