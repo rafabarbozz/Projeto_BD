@@ -17,12 +17,8 @@ if (opcao == 1):
         
     if (opcao_exercicio == 1): # Criar dados
         
-        nome_exercicio = ''
-        qtd_series = 0
-        qtd_reps = 0
-        tempo_descanso = 0
-        tecnica_avancada = ''
-        tipo_treino = ''
+        nome_exercicio = tecnica_avancada = tipo_treino = ''
+        qtd_series = qtd_reps = tempo_descanso = 0
         
         nome_exercicio = str(input("Digite o nome do exercicio: "))
         connection = None
