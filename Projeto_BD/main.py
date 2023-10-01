@@ -59,6 +59,7 @@ if (opcao == 1):
             
     elif (opcao_exercicio == 2): # Remover dados
         atributo = 0
+        
         print("Remover por:\n"
               "1 - Nome do exercicio\n"
               "2 - Id do exercicio")
@@ -97,6 +98,7 @@ if (opcao == 1):
         
     elif (opcao_exercicio == 3): # Atualizar dados
         atributo = 0
+        
         print("Atualizar:\n"
               "1 - Nome do exercicio\n"
               "2 - Quantidade de séries\n"
@@ -119,11 +121,11 @@ if (opcao == 1):
             
             atributo = int(input("Digite a opção que deseja: "))
         
-        if (atributo == 1): # Atualizar nome
+        if (atributo == 1): # Atualizando nome
             nome = ''
             id = 0
             
-            id = int(input("Digite o id do exercício que deseja trocar o nome: "))
+            id = int(input("Digite o id do exercício que deseja alterar o nome: "))
             nome = str(input("Digite o novo nome do exercício: "))
             
             if (GerenciadorExercicio.alterar_nome_exercicio(id, nome) is not None):
@@ -131,11 +133,11 @@ if (opcao == 1):
             else:
                 print("Não foi possível alterar o nome desse exercício, pois ele não se encontra na tabela!")
             
-        elif (atributo == 2): # Atualizar qtd_series
+        elif (atributo == 2): # Atualizando qtd_series
             id = 0
             nova_qtd = 0
             
-            id = int(input("Digite o id do exercício que deseja trocar a quantidade de séries: "))
+            id = int(input("Digite o id do exercício que deseja alterar a quantidade de séries: "))
             nova_qtd = int(input("Digite a nova quantidade de séries do exercício: "))
             
             if (GerenciadorExercicio.alterar_qtd_series(id, nova_qtd) is not None):
@@ -143,11 +145,11 @@ if (opcao == 1):
             else:
                 print("Não foi possível alterar a quantidade de séries desse exercício, pois ele não se encontra na tabela!")
                 
-        elif (atributo == 3): # Atualizar qtd_reps
+        elif (atributo == 3): # Atualizando qtd_reps
             id = 0
             nova_qtd = 0
             
-            id = int(input("Digite o id do exercício que deseja trocar a quantidade de repetições: "))
+            id = int(input("Digite o id do exercício que deseja alterar a quantidade de repetições: "))
             nova_qtd = int(input("Digite a nova quantidade de repetições do exercício: "))
             
             if (GerenciadorExercicio.alterar_qtd_reps(id, nova_qtd) is not None):
@@ -155,11 +157,11 @@ if (opcao == 1):
             else:
                 print("Não foi possível alterar a quantidade de repetições desse exercício, pois ele não se encontra na tabela!")
                 
-        elif (atributo == 4): # Atualizar tempo de descanso
+        elif (atributo == 4): # Atualizando tempo de descanso
             id = 0
             tempo_descanso = 0
             
-            id = int(input("Digite o id do exercício que deseja trocar o tempo de descanso: "))
+            id = int(input("Digite o id do exercício que deseja alterar o tempo de descanso: "))
             tempo_descanso = int(input("Digite o novo tempo de descanso do exercício: "))
          
             if (GerenciadorExercicio.alterar_tempo_descanso(id, tempo_descanso) is not None):
@@ -167,11 +169,11 @@ if (opcao == 1):
             else:
                 print("Não foi possível alterar o tempo de descanso desse exercício, pois ele não se encontra na tabela!")
                 
-        elif (atributo == 5): # Atualizar técnica avançada
+        elif (atributo == 5): # Atualizando técnica avançada
             id = 0
             tecnica_avancada = ''
             
-            id = int(input("Digite o id do exercício que deseja trocar técnica avançada: "))
+            id = int(input("Digite o id do exercício que deseja alterar técnica avançada: "))
             tecnica_avancada = str(input("Digite a nova técnica avançada do exercício: "))
             
             if (GerenciadorExercicio.alterar_tecnica_avancada(id, tecnica_avancada) is not None):
@@ -179,11 +181,11 @@ if (opcao == 1):
             else:
                 print("Não foi possível alterar a técnica avançada desse exercício, pois ele não se encontra na tabela!")
             
-        elif (atributo == 6): # Atualizar o tipo do treino
+        elif (atributo == 6): # Atualizando o tipo do treino
             id = 0
             tipo_treino = ''
             
-            id = int(input("Digite o id do exercício que deseja trocar o tipo do treino: "))
+            id = int(input("Digite o id do exercício que deseja alterar o tipo do treino: "))
             
             tipo_treino = str(input("Digite o tipo do treino (A, B, C): "))
             while tipo_treino not in "ABC":
@@ -198,6 +200,7 @@ if (opcao == 1):
         
     elif (opcao_exercicio == 4): # Pesquisar dados
         atributo = 0
+        
         print("Procurar por:\n"
               "1 - Id do exercício\n"
               "2 - Nome do exercicio\n"
@@ -320,3 +323,279 @@ if (opcao == 1):
         resultado = GerenciadorExercicio.listar_exercicios()
         for i in resultado:
             print(i)
+            
+
+elif (opcao == 2):
+    # Manipulação da tabela Medidas
+    opcao_medida = menu_tabela('Medidas')
+    
+    
+    if (opcao_medida == 1): # Criar dados
+        coxa_esq = coxa_dir = braco_esq = braco_dir = altura = cintura = peso = 0
+            
+        coxa_esq = float(input("Digite a medida da coxa esquerda: "))
+        coxa_dir = float(input("Digite a medida da coxa direita: "))
+        braco_esq = float(input("Digite a medida do braço esquerdo: "))
+        braco_dir = float(input("Digite a medida do braço direito: "))
+        altura = float(input("Digite a altura: "))
+        cintura = float(input("Digite a cintura: "))
+        peso = float(input("Digite o peso: "))
+        
+        GerenciadorMedidas.criar_medida(coxa_esq, coxa_dir, braco_esq, braco_dir, altura, cintura, peso)
+        
+    
+    elif (opcao_medida == 2): # Remover dados
+        id = 0
+        
+        print("Remoção por id")
+        id = int(input("Digite o id da medida que deseja excluir: "))
+        
+        if (GerenciadorMedidas.remover_por_id(id) is not None):
+            print("Medida removida com sucesso!")
+        else:
+            print("Não foi possível remover essa medida, pois ela não se encontra na tabela!")
+            
+    elif (opcao_medida == 3): # Atualizar dados
+        atributo = 0
+        
+        print("Atualizar:\n"
+              "1 - Coxa esquerda\n"
+              "2 - Coxa direita\n"
+              "3 - Braço esquerdo\n"
+              "4 - Braço direito\n"
+              "5 - Altura\n"
+              "6 - Cintura\n"
+              "7 - Peso\n")
+        
+        atributo = int(input("Digite a opção que deseja: "))
+        print("\n")
+        while (atributo < 1) or (atributo > 7):
+            print("Opção inválida. Tente novamente!\n")
+            print("Atualizar:\n"
+              "1 - Coxa esquerda\n"
+              "2 - Coxa direita\n"
+              "3 - Braço esquerdo\n"
+              "4 - Braço direito\n"
+              "5 - Altura\n"
+              "6 - Cintura\n"
+              "7 - Peso\n")
+            
+            atributo = int(input("Digite a opção que deseja: "))
+        
+        if (atributo == 1): # Atualizando coxa esquerda
+            id = 0 
+            coxa_esq = 0
+            
+            id = int(input("Digite o id que deseja alterar a medida da coxa esquerda: "))
+            coxa_esq = float(input("Digite a nova medida da coxa esquerda: "))
+            
+            if (GerenciadorMedidas.alterar_coxa_esq(id, coxa_esq) is not None):
+                print("Coxa esquerda alterada com sucesso!")
+            else:
+                print("Não foi possível alterar a medida da coxa esquerda, pois esse id não se encontra na tabela!")
+        
+        elif (atributo == 2): # Atualizando coxa direita
+            id = 0
+            coxa_dir = 0
+            
+            id = int(input("Digite o id que deseja alterar a medida da coxa direita: "))
+            coxa_dir = float(input("Digite a nova medida da coxa direita: "))
+            
+            if (GerenciadorMedidas.alterar_coxa_dir(id, coxa_dir) is not None):
+                print("Coxa direita alterado com sucesso!")
+            else:
+                print("Não foi possível alterar a medida da coxa direita, pois esse id não se encontra na tabela!")
+
+        elif (atributo == 3): # Atualizando braço esquerdo
+            id = 0
+            braco_esq = 0
+            
+            id = int(input("Digite o id que deseja alterar a medida do braço esquerdo: "))
+            braco_esq = float(input("Digite a nova medida do braço esquerdo: "))
+            
+            if (GerenciadorMedidas.alterar_braco_esq(id, braco_esq) is not None):
+                print("Braço esquerdo alterado com sucesso!")
+            else:
+                print("Não foi possível alterar a medida do braço esquerdo, pois esse id não se encontra na tabela !")
+                
+        elif (atributo == 4): # Atualizando braço direito
+            id = 0
+            braco_dir = 0
+            
+            id = int(input("Digite o id que deseja alterar a medida do braço direito: "))
+            braco_dir = float(input("Digite a nova medida do braço direito: "))
+            
+            if (GerenciadorMedidas.alterar_braco_dir(id, braco_dir) is not None):
+                print("Braço direito alterado com sucesso!")
+            else:
+                print("Não foi possível alterar a medida do braço direito, pois esse id não se encontra na tabela !")
+                
+        elif (atributo == 5): # Atualizando altura
+            id = 0
+            altura = 0
+            
+            id = int(input("Digite o id que deseja alterar a altura: "))
+            altura = float(input("Digite a nova altura: "))
+            
+            if (GerenciadorMedidas.alterar_altura(id, altura) is not None):
+                print("Altura alterada com sucesso!")
+            else:
+                print("Não foi possível alterar a altura, pois esse id não se encontra na tabela !")
+                
+        elif (atributo == 6): # Atualizando cintura
+            id = 0
+            cintura = 0
+            
+            id = int(input("Digite o id que deseja alterar a cintura: "))
+            cintura = float(input("Digite a nova cintura: "))
+            
+            if (GerenciadorMedidas.alterar_cintura(id, cintura) is not None):
+                print("Altura alterada com sucesso!")
+            else:
+                print("Não foi possível alterar a cintura, pois esse id não se encontra na tabela !")
+                
+        elif (atributo == 7): # Atualizando peso
+            id = 0
+            peso = 0
+            
+            id = int(input("Digite o id que deseja alterar o peso: "))
+            peso = float(input("Digite a novo peso: "))
+            
+            if (GerenciadorMedidas.alterar_peso(id, peso) is not None):
+                print("Peso alterado com sucesso!")
+            else:
+                print("Não foi possível alterar o peso, pois esse id não se encontra na tabela !")
+                
+    elif (opcao_medida == 4): # Pesquisar dados
+        atributo = 0
+        
+        print("Procurar por:\n"
+              "1 - Id da medida\n"
+              "2 - Coxa esquerda\n"
+              "3 - Coxa direita\n"
+              "4 - Braço esquerdo\n"
+              "5 - Braço direito\n"
+              "6 - Altura\n"
+              "7 - Cintura\n"
+              "8 - Peso")
+        
+        atributo = int(input("Digite a opção que deseja: "))
+        print("\n")
+        while (atributo < 1) or (atributo > 8):
+            print("Opção inválida. Tente novamente!\n")
+            print("Procurar por:\n"
+              "1 - Id da medida\n"
+              "2 - Coxa esquerda\n"
+              "3 - Coxa direita\n"
+              "4 - Braço esquerdo\n"
+              "5 - Braço direito\n"
+              "6 - Altura\n"
+              "7 - Cintura\n"
+              "8 - Peso")
+            
+            atributo = int(input("Digite a opção que deseja: "))
+            
+        if (atributo == 1): # Pesquisar por id
+            id = 0
+            resultado = []
+            
+            id = int(input("Digite o id da medida que deseja procurar: "))
+            resultado = GerenciadorMedidas.pesquisar_por_id(id)
+            
+            if (resultado is not None):
+                for i in resultado:
+                    print(i, end=' ')
+            else:
+                print("Não foi possível listar os dados com esse id, pois ele não existe na tabela")
+        
+        elif (atributo == 2): # Pesquisar por coxa esquerda
+            coxa_esq = 0
+            resultado = []
+            
+            coxa_esq = float(input("Digite a medida da coxa esquerda que deseja procurar: "))
+            resultado = GerenciadorMedidas.pesquisar_por_coxa_esq(coxa_esq)
+            if (len(resultado) != 0):
+                for i in resultado:
+                    print(i)
+            else:
+                print("Nenhuma medida encontrado com essa coxa esquerda!")
+        
+        elif (atributo == 3): # Pesquisar por coxa direita
+            coxa_dir = 0
+            resultado = []
+            
+            coxa_dir = float(input("Digite a medida da coxa direita que deseja procurar: "))
+            resultado = GerenciadorMedidas.pesquisar_por_coxa_dir(coxa_dir)
+            if (len(resultado) != 0):
+                for i in resultado:
+                    print(i)
+            else:
+                print("Nenhuma medida encontrado com essa coxa direita!")
+                
+        elif (atributo == 4): # Pesquisar por braço esquerdo
+            braco_esq = 0
+            resultado = []
+            
+            braco_esq = float(input("Digite a medida do braço esquerdo que deseja procurar: "))
+            resultado = GerenciadorMedidas.pesquisar_por_braco_esq(braco_esq)
+            if (len(resultado) != 0):
+                for i in resultado:
+                    print(i)
+            else:
+                print("Nenhuma medida encontrado com esse braço esquerdo!")
+                
+        elif (atributo == 5): # Pesquisar por braço direito
+            braco_dir = 0
+            resultado = []
+            
+            braco_dir = float(input("Digite a medida do braço direito que deseja procurar: "))
+            resultado = GerenciadorMedidas.pesquisar_por_braco_dir(braco_dir)
+            if (len(resultado) != 0):
+                for i in resultado:
+                    print(i)
+            else:
+                print("Nenhuma medida encontrado com esse braço direito!")
+        
+        elif (atributo == 6): # Pesquisar por altura
+            altura = 0
+            resultado = []
+            
+            altura = float(input("Digite a medida da altura que deseja procurar: "))
+            resultado = GerenciadorMedidas.pesquisar_por_altura(altura)
+            if (len(resultado) != 0):
+                for i in resultado:
+                    print(i)
+            else:
+                print("Nenhuma medida encontrado com essa altura!")
+                
+        elif (atributo == 7): # Pesquisar por cintura
+            cintura = 0
+            resultado = []
+            
+            cintura = float(input("Digite a medida da cintura que deseja procurar: "))
+            resultado = GerenciadorMedidas.pesquisar_por_cintura(cintura)
+            if (len(resultado) != 0):
+                for i in resultado:
+                    print(i)
+            else:
+                print("Nenhuma medida encontrado com essa cintura!")
+                
+        elif (atributo == 8): # Pesquisar por peso
+            peso = 0
+            resultado = []
+            
+            peso = float(input("Digite a medida do peso que deseja procurar: "))
+            resultado = GerenciadorMedidas.pesquisar_por_peso(peso)
+            if (len(resultado) != 0):
+                for i in resultado:
+                    print(i)
+            else:
+                print("Nenhuma medida encontrado com esse peso!")
+    
+    elif (opcao_medida == 5): # Listar toda tabela
+        resultado = [] 
+        
+        resultado = GerenciadorMedidas.listar_medidas()
+        for i in resultado:
+            print(i)
+        
