@@ -8,9 +8,11 @@ from psycopg2 import connect, DatabaseError
 
 
 
-opcao = menu_principal() 
+continuaroperacao = 1
 
-while True:
+while (continuaroperacao == 1):
+    opcao = menu_principal() 
+    
     if (opcao == 1):
         # Manipulação da tabela Exercicios
         opcao_exercicio = menu_tabela('Exercicio')
@@ -343,6 +345,11 @@ while True:
             for i in resultado:
                 print(i)
                 
+                
+        elif (opcao_exercicio == 6):
+            print("Operação cancelada!")
+            pass
+                
 
     elif (opcao == 2):
         # Manipulação da tabela Medidas
@@ -634,6 +641,11 @@ while True:
             resultado = GerenciadorMedidas.listar_medidas()
             for i in resultado:
                 print(i)
+                
+        
+        elif (opcao_medida == 6):
+            print("Operação cancelada!")
+            pass
         
         
     elif (opcao == 3):
@@ -740,7 +752,7 @@ while True:
                     print("Não foi possível remover esse aluno, pois ele não se encontra na tabela!")
             
                     
-        elif(opcao_aluno == 3): # Atualizar dados
+        elif (opcao_aluno == 3): # Atualizar dados
             atributo = 0
             
             print("Procurar por:\n"
@@ -885,5 +897,19 @@ while True:
             resultado = GerenciadorAluno.listar_alunos()
             for i in resultado:
                 print(i)
+                
+                
+        elif (opcao_aluno == 6):
+            print("Operação cancelada!")
+            pass
+        
+    
     elif (opcao == 4):
+        print("Programa finalizado!")
         break
+    
+    
+    print("\n")
+    continuaroperacao = int(input("Deseja continuar as operações nas tabelas(1 para sim e 0 para não): "))
+    if (continuaroperacao == 0):
+        print("\nPrograma finalizado!")
