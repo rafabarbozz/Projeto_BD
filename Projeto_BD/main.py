@@ -9,9 +9,8 @@ from psycopg2 import connect, DatabaseError
 
 
 opcao = menu_principal() 
-continuaroperacoes = 0
 
-while (continuaroperacoes == 1):
+while True:
     if (opcao == 1):
         # Manipulação da tabela Exercicios
         opcao_exercicio = menu_tabela('Exercicio')

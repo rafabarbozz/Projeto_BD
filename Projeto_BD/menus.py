@@ -37,23 +37,25 @@ def menu_tabela(tabela: str):
           f"2 - Remover {tabela}\n"
           f"3 - Atualizar {tabela}\n"
           f"4 - Procurar {tabela}\n"
-          f"5 - Listar toda tabela {tabela}")
+          f"5 - Listar toda tabela {tabela}\n"
+           "6 - Cancelar")
     
     opcao_tabela = int(input("Digite a opção que deseja: "))
     print("\n")
     
-    while (opcao_tabela  < 1) or (opcao_tabela  > 5):
+    while (opcao_tabela  < 1) or (opcao_tabela  > 6):
         print("Opção inválida. Tente novamente!\n")
         
         print("----------------------------------")
         print("      MENU      ".center(34, ' '))
         print("----------------------------------")
-        print("Opções para {tabela}:")
+        print(f"Opções para {tabela}:")
         print(f"1 - Novo {tabela}\n"
               f"2 - Remover {tabela}\n"
               f"3 - Atualizar {tabela}\n"
               f"4 - Procurar {tabela}\n"
-              f"5 - Listar toda tabela {tabela}")
+              f"5 - Listar toda tabela {tabela}\n"
+               "6 - Cancelar")
         
         opcao_tabela  = int(input("Digite a opção que deseja: "))
         print("\n")
