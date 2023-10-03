@@ -38,7 +38,7 @@ def menu_tabela(tabela: str):
           f"3 - Atualizar {tabela}\n"
           f"4 - Procurar {tabela}\n"
           f"5 - Listar toda tabela {tabela}\n"
-           "6 - Cancelar")
+           "6 - Cancelar operação")
     
     opcao_tabela = int(input("Digite a opção que deseja: "))
     print("\n")
@@ -55,7 +55,7 @@ def menu_tabela(tabela: str):
               f"3 - Atualizar {tabela}\n"
               f"4 - Procurar {tabela}\n"
               f"5 - Listar toda tabela {tabela}\n"
-               "6 - Cancelar")
+               "6 - Cancelar operação")
         
         opcao_tabela  = int(input("Digite a opção que deseja: "))
         print("\n")
