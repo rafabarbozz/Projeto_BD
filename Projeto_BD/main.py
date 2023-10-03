@@ -19,7 +19,6 @@ while (continuaroperacao == 1):
             
             
         if (opcao_exercicio == 1): # Criar dados
-            
             nome_exercicio = tecnica_avancada = tipo_treino = ''
             qtd_series = qtd_reps = tempo_descanso = 0
             
@@ -65,15 +64,17 @@ while (continuaroperacao == 1):
             
             print("Remover por:\n"
                 "1 - Nome do exercicio\n"
-                "2 - Id do exercicio")
+                "2 - Id do exercicio\n"
+                "3 - Cancelar operação")
             
             atributo = int(input("Digite a opção que deseja: "))
             print("\n")
-            while (atributo < 1) or (atributo > 2):
+            while (atributo < 1) or (atributo > 3):
                 print("Opção inválida. Tente novamente!\n")
                 print("Remover por:\n"
                 "1 - Nome do exercicio\n"
-                "2 - Id do exercicio")
+                "2 - Id do exercicio\n"
+                "3 - Cancelar operação")
             
                 atributo = int(input("Digite a opção que deseja: "))
                 print("\n")
@@ -100,6 +101,10 @@ while (continuaroperacao == 1):
                 else:
                     print("Não foi possível excluir esse exercício, pois ele não está presente na tabela")
             
+            elif (atributo == 3):
+                print("Operação cancelada!")
+                pass                
+            
             
         elif (opcao_exercicio == 3): # Atualizar dados
             atributo = 0
@@ -110,11 +115,12 @@ while (continuaroperacao == 1):
                 "3 - Quantidade de repetições\n"
                 "4 - Tempo de descanso\n"
                 "5 - Técnica avançada\n"
-                "6 - Tipo do treino")
+                "6 - Tipo do treino\n"
+                "7 - Cancelar")
             
             atributo = int(input("Digite a opção que deseja: "))
             print("\n")
-            while (atributo < 1) or (atributo > 6):
+            while (atributo < 1) or (atributo > 7):
                 print("Opção inválida. Tente novamente!\n")
                 print("Atualizar:\n"
                 "1 - Nome do exercicio\n"
@@ -122,7 +128,8 @@ while (continuaroperacao == 1):
                 "3 - Quantidade de repetições\n"
                 "4 - Tempo de descanso\n"
                 "5 - Técnica avançada\n"
-                "6 - Tipo do treino")
+                "6 - Tipo do treino\n"
+                "7 - Cancelar")
                 
                 atributo = int(input("Digite a opção que deseja: "))
                 print("\n")
@@ -209,6 +216,10 @@ while (continuaroperacao == 1):
                 else:
                     print("Não foi possível alterar o tipo do treino desse exercício, pois ele não se encontra na tabela!")
             
+            elif (atributo == 7):
+                print("Operação cancelada!")
+                pass 
+            
             
         elif (opcao_exercicio == 4): # Pesquisar dados
             atributo = 0
@@ -220,11 +231,12 @@ while (continuaroperacao == 1):
                 "4 - Quantidade de repetições\n"
                 "5 - Tempo de descanso\n"
                 "6 - Técnica avançada\n"
-                "7 - Tipo do treino")
+                "7 - Tipo do treino\n"
+                "8 - Cancelar operação")
             
             atributo = int(input("Digite a opção que deseja: "))
             print("\n")
-            while (atributo < 1) or (atributo > 7):
+            while (atributo < 1) or (atributo > 8):
                 print("Opção inválida. Tente novamente!\n")
                 print("Procurar por:\n"
                 "1 - Id do exercício\n"
@@ -233,7 +245,8 @@ while (continuaroperacao == 1):
                 "4 - Quantidade de repetições\n"
                 "5 - Tempo de descanso\n"
                 "6 - Técnica avançada\n"
-                "7 - Tipo do treino")
+                "7 - Tipo do treino\n"
+                "8 - Cancelar operação")
                 
                 atributo = int(input("Digite a opção que deseja: "))
                 print("\n")
@@ -336,6 +349,10 @@ while (continuaroperacao == 1):
                         print(i)
                 else:
                     print("Nenhum exercício encontrado com esse tipo de treino!")
+                    
+            elif (atributo == 8):
+                print("Operação cancelada!")
+                pass 
         
         
         elif (opcao_exercicio == 5): # Listar toda tabela
@@ -391,11 +408,12 @@ while (continuaroperacao == 1):
                 "4 - Braço direito\n"
                 "5 - Altura\n"
                 "6 - Cintura\n"
-                "7 - Peso\n")
+                "7 - Peso\n"
+                "8 - Cancelar operação")
             
             atributo = int(input("Digite a opção que deseja: "))
             print("\n")
-            while (atributo < 1) or (atributo > 7):
+            while (atributo < 1) or (atributo > 8):
                 print("Opção inválida. Tente novamente!\n")
                 print("Atualizar:\n"
                 "1 - Coxa esquerda\n"
@@ -404,7 +422,8 @@ while (continuaroperacao == 1):
                 "4 - Braço direito\n"
                 "5 - Altura\n"
                 "6 - Cintura\n"
-                "7 - Peso\n")
+                "7 - Peso\n"
+                "8 - Cancelar operação")
                 
                 atributo = int(input("Digite a opção que deseja: "))
                 print("\n")
@@ -500,6 +519,11 @@ while (continuaroperacao == 1):
                 else:
                     print("Não foi possível alterar o peso, pois esse id não se encontra na tabela!")
                     
+            elif (atributo == 8):
+                print("Operação cancelada!")
+                pass 
+                    
+                    
         elif (opcao_medida == 4): # Pesquisar dados
             atributo = 0
             
@@ -511,11 +535,12 @@ while (continuaroperacao == 1):
                 "5 - Braço direito\n"
                 "6 - Altura\n"
                 "7 - Cintura\n"
-                "8 - Peso")
+                "8 - Peso\n"
+                "9 - Cancelar operação")
             
             atributo = int(input("Digite a opção que deseja: "))
             print("\n")
-            while (atributo < 1) or (atributo > 8):
+            while (atributo < 1) or (atributo > 9):
                 print("Opção inválida. Tente novamente!\n")
                 print("Procurar por:\n"
                 "1 - Id da medida\n"
@@ -525,7 +550,8 @@ while (continuaroperacao == 1):
                 "5 - Braço direito\n"
                 "6 - Altura\n"
                 "7 - Cintura\n"
-                "8 - Peso")
+                "8 - Peso\n"
+                "9 - Cancelar operação")
                 
                 atributo = int(input("Digite a opção que deseja: "))
                 print("\n")
@@ -634,6 +660,11 @@ while (continuaroperacao == 1):
                         print(i)
                 else:
                     print("Nenhuma medida encontrada com esse peso!")
+                    
+            elif (atributo == 9):
+                print("Operação cancelada!")
+                pass 
+            
         
         elif (opcao_medida == 5): # Listar toda tabela
             resultado = [] 
@@ -704,16 +735,18 @@ while (continuaroperacao == 1):
             print("Remover por:\n"
                 "1 - Id aluno\n"
                 "2 - Nome do aluno\n"
-                "3 - CPF do aluno")
+                "3 - CPF do aluno\n"
+                "4 - Cancelar operação")
             
             atributo = int(input("Digite a opção que deseja: "))
             print("\n")
-            while (atributo < 1) or (atributo > 3):
+            while (atributo < 1) or (atributo > 4):
                 print("Opção inválida. Tente novamente!\n")
                 print("Remover por:\n"
                     "1 - Id aluno\n"
                     "2 - Nome do aluno\n"
-                    "3 - CPF do aluno")
+                    "3 - CPF do aluno\n"
+                    "4 - Cancelar operação")
             
                 atributo = int(input("Digite a opção que deseja: "))
                 print("\n")
@@ -751,6 +784,10 @@ while (continuaroperacao == 1):
                 else:
                     print("Não foi possível remover esse aluno, pois ele não se encontra na tabela!")
             
+            elif (atributo == 4):
+                print("Operação cancelada!")
+                pass                     
+            
                     
         elif (opcao_aluno == 3): # Atualizar dados
             atributo = 0
@@ -758,16 +795,18 @@ while (continuaroperacao == 1):
             print("Procurar por:\n"
                 "1 - Nome do aluno\n"
                 "2 - CPF do aluno\n"
-                "3 - Sexo do aluno")
+                "3 - Sexo do aluno\n"
+                "4 - Cancelar operação")
             
             atributo = int(input("Digite a opção que deseja: "))
             print("\n")
-            while (atributo < 1) or (atributo > 3):
+            while (atributo < 1) or (atributo > 4):
                 print("Opção inválida. Tente novamente!\n")
                 print("Procurar por:\n"
                 "1 - Nome do aluno\n"
                 "2 - CPF do aluno\n"
-                "3 - Sexo do aluno")
+                "3 - Sexo do aluno\n"
+                "4 - Cancelar operação")
                 
                 atributo = int(input("Digite a opção que deseja: "))     
                 print("\n") 
@@ -810,6 +849,10 @@ while (continuaroperacao == 1):
                     print("Sexo alterado com sucesso!")
                 else:
                     print("Não foi possível alterar o sexo do aluno, pois esse id não se encontra na tabela!")
+            
+            elif (atributo == 4):
+                print("Operação cancelada!")
+                pass 
         
         
         elif (opcao_aluno == 4): # Pesquisar dados
@@ -819,17 +862,19 @@ while (continuaroperacao == 1):
                 "1 - Id do aluno\n"
                 "2 - Nome do aluno\n"
                 "3 - CPF do aluno\n"
-                "4 - Sexo do aluno")
+                "4 - Sexo do aluno\n"
+                "5 - Cancelar operação")
             
             atributo = int(input("Digite a opção que deseja: "))
             print("\n")
-            while (atributo < 1) or (atributo > 4):
+            while (atributo < 1) or (atributo > 5):
                 print("Opção inválida. Tente novamente!\n")
                 print("Procurar por:\n"
                 "1 - Id do aluno\n"
                 "2 - Nome do aluno\n"
                 "3 - CPF do aluno\n"
-                "4 - Sexo do aluno")
+                "4 - Sexo do aluno\n"
+                "5 - Cancelar operação")
                 
                 atributo = int(input("Digite a opção que deseja: "))
                 print("\n")
@@ -889,6 +934,10 @@ while (continuaroperacao == 1):
                         print(i)
                 else:
                     print("Não foi possível listar os dados do alunos com esse sexo, pois ele não existe na tabela")
+                    
+            elif (atributo == 5):
+                print("Operação cancelada!")
+                pass 
         
         
         elif (opcao_aluno == 5): # Listar toda tabela
@@ -911,5 +960,9 @@ while (continuaroperacao == 1):
     
     print("\n")
     continuaroperacao = int(input("Deseja continuar as operações nas tabelas(1 para sim e 0 para não): "))
+    while (continuaroperacao > 1) or (continuaroperacao < 0):
+        print("Opção inválida. Tente novamente!")
+        continuaroperacao = int(input("Deseja continuar as operações nas tabelas(1 para sim e 0 para não): "))
+
     if (continuaroperacao == 0):
         print("\nPrograma finalizado!")
