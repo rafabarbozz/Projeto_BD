@@ -13,6 +13,7 @@ continuaroperacao = 1
 while (continuaroperacao == 1):
     opcao = menu_principal() 
     
+    
     if (opcao == 1):
         # Manipulação da tabela Exercicios
         opcao_exercicio = menu_tabela('Exercicio')
@@ -372,7 +373,6 @@ while (continuaroperacao == 1):
         # Manipulação da tabela Medidas
         opcao_medida = menu_tabela('Medidas')
         
-        
         if (opcao_medida == 1): # Criar dados
             coxa_esq = coxa_dir = braco_esq = braco_dir = altura = cintura = peso = 0
                 
@@ -397,6 +397,7 @@ while (continuaroperacao == 1):
                 print("Medida removida com sucesso!")
             else:
                 print("Não foi possível remover essa medida, pois ela não se encontra na tabela!")
+                
                 
         elif (opcao_medida == 3): # Atualizar dados
             atributo = 0
@@ -682,7 +683,6 @@ while (continuaroperacao == 1):
     elif (opcao == 3):
         # Manipulação da tabela aluno
         opcao_aluno = menu_tabela('Aluno')
-        
         
         if (opcao_aluno == 1): # Criar dados
             medida_id = 0
