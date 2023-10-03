@@ -11,7 +11,7 @@ def menu_principal():
     opcao = int(input("Digite o que deseja gerenciar: "))
     print("\n")
     
-    while (opcao < 1) or (opcao > 3):
+    while (opcao < 1) or (opcao > 4):
         print("Opção inválida. Tente novamente!\n")
         
         print("----------------------------------")
