@@ -6,7 +6,8 @@ def menu_principal():
     print("Opções:")
     print("1 - Exercicio\n"
         "2 - Medida\n"
-        "3 - Aluno")
+        "3 - Aluno\n"
+        "4 - Finalizar operações")
     opcao = int(input("Digite o que deseja gerenciar: "))
     print("\n")
     
@@ -19,7 +20,8 @@ def menu_principal():
         print("Opções:")
         print("1 - Exercicio\n"
               "2 - Medida\n"
-              "3 - Aluno")
+              "3 - Aluno\n"
+              "4 - Finalizar operações")
         
         opcao = int(input("Digite o que deseja gerenciar: "))
         print("\n")
