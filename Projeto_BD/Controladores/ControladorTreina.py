@@ -183,14 +183,14 @@ class GerenciadorTreina:
 
 
     # Função para listar tudo
-    def listar_treino_aluno():
+    def listar_treino_aluno(nome: str):
         connection = None
         
         try:
             params = config()
             with connect(**params) as conn:
                 with conn.cursor() as cur:
-                    cur.execute('SELECT * FROM treino_aluno ORDER BY id_aluno')
+                    cur.execute('SELECT * FROM treino_aluno where nome = %s ORDER BY id_aluno', (nome,))
                     
                     return cur.fetchall()
                     

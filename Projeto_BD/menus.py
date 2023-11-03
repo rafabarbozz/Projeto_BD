@@ -7,11 +7,12 @@ def menu_principal():
     print("1 - Exercicio\n"
         "2 - Medida\n"
         "3 - Aluno\n"
-        "4 - Finalizar operações")
+        "4 - Aluno e treino\n"
+        "5 - Finalizar operações")
     opcao = int(input("Digite o que deseja gerenciar: "))
     print("\n")
     
-    while (opcao < 1) or (opcao > 4):
+    while (opcao < 1) or (opcao > 5):
         print("Opção inválida. Tente novamente!\n")
         
         print("----------------------------------")
@@ -21,7 +22,8 @@ def menu_principal():
         print("1 - Exercicio\n"
               "2 - Medida\n"
               "3 - Aluno\n"
-              "4 - Finalizar operações")
+              "4 - Aluno e treino\n"
+              "5 - Finalizar operações")
         
         opcao = int(input("Digite o que deseja gerenciar: "))
         print("\n")
