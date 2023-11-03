@@ -954,6 +954,21 @@ while (continuaroperacao == 1):
         
     
     elif (opcao == 4):
+        resultado = [] 
+        nome = ''
+        
+        nome = input(str("Digite o nome do aluno: "))
+        
+        
+        resultado = GerenciadorTreina.listar_treino_aluno(nome)
+        if (len(resultado) != 0):
+            for i in resultado:
+                print(i)
+        else:
+            print("Nome não se encontra na tabela")
+            
+        
+    elif (opcao == 5):
         print("Programa finalizado!")
         break
     
