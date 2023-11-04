@@ -2,7 +2,11 @@ from psycopg2 import connect, DatabaseError
 from DataBase.DB_config.config_db import config
 
 class GerenciadorMedidas:
+    def __init__(self):
+        pass
+    
     # Função para criar medidas
+    @staticmethod
     def criar_medida(coxa_esq: float, coxa_dir: float, braco_esq: float, braco_dir: float, 
                     altura: float, cintura: float, peso: float): # Funcionando
         connection = None
@@ -27,6 +31,7 @@ class GerenciadorMedidas:
             
 
     # Funções para alterar dados
+    @staticmethod
     def alterar_coxa_esq(id: int, nova_medida: str): # Funcionando
         connection = None
         
@@ -46,7 +51,8 @@ class GerenciadorMedidas:
         finally:
             if connection is not None:
                 connection.close()
-        
+    
+    @staticmethod    
     def alterar_coxa_dir(id: int, nova_medida: str): # Funcionando
         connection = None
         
@@ -67,6 +73,7 @@ class GerenciadorMedidas:
             if connection is not None:
                 connection.close()
 
+    @staticmethod
     def alterar_braco_esq(id: int, nova_medida: str): # Funcionando
         connection = None
         
@@ -87,6 +94,7 @@ class GerenciadorMedidas:
             if connection is not None:
                 connection.close()
 
+    @staticmethod
     def alterar_braco_dir(id: int, nova_medida: str): #Funcionando
         connection = None
         
@@ -106,7 +114,8 @@ class GerenciadorMedidas:
         finally:
             if connection is not None:
                 connection.close()
-
+    
+    @staticmethod
     def alterar_altura(id:int, nova_altura: float): # Funcionando
         connection = None
         
@@ -126,7 +135,8 @@ class GerenciadorMedidas:
         finally:
             if connection is not None:
                 connection.close()
-        
+     
+    @staticmethod 
     def alterar_cintura(id:int, nova_cintura: float): # Funcionando
         connection = None
         
@@ -146,7 +156,8 @@ class GerenciadorMedidas:
         finally:
             if connection is not None:
                 connection.close()
-        
+    
+    @staticmethod
     def alterar_peso(id:int, novo_peso: float):
         connection = None
         
@@ -170,6 +181,7 @@ class GerenciadorMedidas:
         
         
     # Funções para pesquisar dados
+    @staticmethod
     def pesquisar_por_id(id: int): # Funcionando
         connection = None
         
@@ -187,7 +199,8 @@ class GerenciadorMedidas:
         finally:
             if connection is not None:
                 connection.close()   
-                
+    
+    @staticmethod               
     def pesquisar_por_coxa_esq(coxa_esq: float):
         connection = None
         
@@ -206,6 +219,7 @@ class GerenciadorMedidas:
             if connection is not None:
                 connection.close()
         
+    @staticmethod
     def pesquisar_por_coxa_dir(coxa_dir: float):
         connection = None
         
@@ -223,7 +237,8 @@ class GerenciadorMedidas:
         finally:
             if connection is not None:
                 connection.close()
-        
+    
+    @staticmethod  
     def pesquisar_por_braco_esq(braco_esq: float):
         connection = None
         
@@ -241,7 +256,8 @@ class GerenciadorMedidas:
         finally:
             if connection is not None:
                 connection.close()
-        
+      
+    @staticmethod  
     def pesquisar_por_braco_dir(braco_dir: float):
         connection = None
         
@@ -259,7 +275,8 @@ class GerenciadorMedidas:
         finally:
             if connection is not None:
                 connection.close()
-        
+      
+    @staticmethod  
     def pesquisar_por_altura(altura: float):
         connection = None
         
@@ -277,7 +294,8 @@ class GerenciadorMedidas:
         finally:
             if connection is not None:
                 connection.close()
-        
+     
+    @staticmethod   
     def pesquisar_por_cintura(cintura: float):
         connection = None
         
@@ -295,7 +313,8 @@ class GerenciadorMedidas:
         finally:
             if connection is not None:
                 connection.close()
-        
+    
+    @staticmethod  
     def pesquisar_por_peso(peso: float):
         connection = None
         
@@ -317,6 +336,7 @@ class GerenciadorMedidas:
         
         
     # Funções para remover dados
+    @staticmethod
     def remover_por_id(id: str): # Funcionando
         connection = None
         
@@ -338,6 +358,7 @@ class GerenciadorMedidas:
         
 
     # Funções para listar tudo
+    @staticmethod
     def listar_medidas(): # Funcionando
         connection = None
         

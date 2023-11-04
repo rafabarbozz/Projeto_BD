@@ -2,7 +2,11 @@ from psycopg2 import connect, DatabaseError
 from DataBase.DB_config.config_db import config
 
 class GerenciadorExercicio:
+    def __init__(self):
+        pass
+    
     # Função para criar um exercício novo
+    @staticmethod
     def criar_exercicio(nome_exercicio: str, qtd_series: int, qtd_reps: int, tempo_descanso:int,
                         tecnica_avancada: str, tipo_treino: str): # Funcionando
         connection = None
@@ -27,6 +31,7 @@ class GerenciadorExercicio:
 
 
     # Funções para alterar dados
+    @staticmethod
     def alterar_nome_exercicio(id: int, novo_nome: str): # Funcionando
         connection = None
         
@@ -46,7 +51,8 @@ class GerenciadorExercicio:
         finally:
             if connection is not None:
                 connection.close()
-        
+     
+    @staticmethod   
     def alterar_qtd_series(id: int, nova_qtd: int): # funcionando
         connection = None
         
@@ -66,7 +72,8 @@ class GerenciadorExercicio:
         finally:
             if connection is not None:
                 connection.close()
-        
+    
+    @staticmethod
     def alterar_qtd_reps(id: int, nova_qtd: int): # Funcionando
         connection = None
         
@@ -87,6 +94,7 @@ class GerenciadorExercicio:
             if connection is not None:
                 connection.close()
 
+    @staticmethod
     def alterar_tempo_descanso(id: int, novo_tempo: int): # Funcionando
         connection = None
         
@@ -106,7 +114,8 @@ class GerenciadorExercicio:
         finally:
             if connection is not None:
                 connection.close()
-
+         
+    @staticmethod
     def alterar_tecnica_avancada(id: int, nova_tecnica: str): # Funcionando
         connection = None
         
@@ -127,6 +136,7 @@ class GerenciadorExercicio:
             if connection is not None:
                 connection.close()
 
+    @staticmethod
     def alterar_tipo_treino(id: int, novo_tipo: str): # Funiconando
         connection = None
         
@@ -150,6 +160,7 @@ class GerenciadorExercicio:
 
 
     # Funções para pesquisar dados
+    @staticmethod
     def pesquisar_por_id(id: int): # Funcionando
         connection = None
         
@@ -168,6 +179,7 @@ class GerenciadorExercicio:
             if connection is not None:
                 connection.close() 
                 
+    @staticmethod          
     def pesquisar_por_nome(nome: str): # Funcionando
         connection = None
         
@@ -185,7 +197,8 @@ class GerenciadorExercicio:
         finally:
             if connection is not None:
                 connection.close()
-                
+    
+    @staticmethod          
     def pesquisar_por_qtd_series(qtd: int): # Funcionando
         connection = None
         
@@ -203,7 +216,8 @@ class GerenciadorExercicio:
         finally:
             if connection is not None:
                 connection.close() 
-                
+       
+    @staticmethod         
     def pesquisar_por_qtd_reps(qtd: int): # Funcionando
         connection = None
         
@@ -221,7 +235,8 @@ class GerenciadorExercicio:
         finally:
             if connection is not None:
                 connection.close()   
-                
+    
+    @staticmethod  
     def pesquisar_por_tempo_descanso(tempo: int): # Funcionando
         connection = None
         
@@ -239,7 +254,8 @@ class GerenciadorExercicio:
         finally:
             if connection is not None:
                 connection.close()    
-                
+    
+    @staticmethod     
     def pesquisar_por_tecnica(tecnica: str): # Funcionando
         connection = None
         
@@ -257,7 +273,8 @@ class GerenciadorExercicio:
         finally:
             if connection is not None:
                 connection.close()   
-                
+    
+    @staticmethod      
     def pesquisar_por_tipo_treino(tipo: str): # Funcionando
         connection = None
         
@@ -279,6 +296,7 @@ class GerenciadorExercicio:
 
 
     # Funçöes para remover dados
+    @staticmethod
     def remover_por_nome(nome: str): # Funcionando
         connection = None
         
@@ -296,7 +314,8 @@ class GerenciadorExercicio:
         finally:
             if connection is not None:
                 connection.close()
-        
+     
+    @staticmethod   
     def remover_por_id(id: int): # Funcionando
         connection = None
         
@@ -318,6 +337,7 @@ class GerenciadorExercicio:
 
 
     # Função para listar tudo
+    @staticmethod
     def listar_exercicios(): # Funcionando
         connection = None
         

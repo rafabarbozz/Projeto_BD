@@ -2,7 +2,11 @@ from psycopg2 import connect, DatabaseError
 from DataBase.DB_config.config_db import config
 
 class GerenciadorAluno:
+    def __init__(self):
+        pass
+    
     # Função para criar novo aluno
+    @staticmethod
     def criar_aluno(nome: str, cpf: str, sexo: str, medida_id: int): # Funcionando
         connection = None
         
@@ -26,6 +30,7 @@ class GerenciadorAluno:
             
             
     # Função para alterar dados 
+    @staticmethod
     def alterar_nome(id: int, novo_nome: str): # Funcionando
         connection = None
         
@@ -45,7 +50,8 @@ class GerenciadorAluno:
         finally:
             if connection is not None:
                 connection.close()
-            
+      
+    @staticmethod      
     def alterar_cpf(id: int, novo_cpf: str): # Funcionando
         connection = None
         
@@ -65,7 +71,8 @@ class GerenciadorAluno:
         finally:
             if connection is not None:
                 connection.close()
-        
+    
+    @staticmethod
     def alterar_sexo(id: int, novo_sexo: str): # Funcionando
         connection = None
         
@@ -85,7 +92,8 @@ class GerenciadorAluno:
         finally:
             if connection is not None:
                 connection.close()
-                
+    
+    @staticmethod         
     def alterar_medida_id(id: int, novo_medida_id: int): # Funcionando
         connection = None
         
@@ -109,6 +117,7 @@ class GerenciadorAluno:
         
 
     # Funções para pesquisar dados
+    @staticmethod
     def pesquisar_por_id(id: int): # Funcionando
         connection = None
         
@@ -126,7 +135,8 @@ class GerenciadorAluno:
         finally:
             if connection is not None:
                 connection.close() 
-                
+    
+    @staticmethod            
     def pesquisar_por_nome(nome: str): # Funcionando
         connection = None
         
@@ -145,6 +155,7 @@ class GerenciadorAluno:
             if connection is not None:
                 connection.close() 
         
+    @staticmethod
     def pesquisar_por_cpf(cpf: str): # Funcionando
         connection = None
         
@@ -163,6 +174,7 @@ class GerenciadorAluno:
             if connection is not None:
                 connection.close() 
     
+    @staticmethod
     def pesquisar_por_sexo(sexo: str): # Funcionando
         connection = None
         
@@ -184,6 +196,7 @@ class GerenciadorAluno:
         
         
     # Funções para remover dados
+    @staticmethod
     def remover_por_nome(nome: str): # Funcionando
         connection = None
         
@@ -201,7 +214,8 @@ class GerenciadorAluno:
         finally:
             if connection is not None:
                 connection.close()
-        
+    
+    @staticmethod
     def remover_por_id(id: int): # Funcionando
         connection = None
         
@@ -219,7 +233,8 @@ class GerenciadorAluno:
         finally:
             if connection is not None:
                 connection.close()
-                
+    
+    @staticmethod 
     def remover_por_cpf(cpf: str): # Funcionando
         connection = None
         
@@ -241,6 +256,7 @@ class GerenciadorAluno:
 
 
     # Função para listar tudo
+    @staticmethod
     def listar_alunos(): # Funcionando
         connection = None
         

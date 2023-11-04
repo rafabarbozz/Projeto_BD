@@ -4,7 +4,11 @@ from Classes.Entidades.Exercicios import Exercicios
 from Classes.Entidades.Aluno import Aluno
 
 class GerenciadorTreina:
+    def __init__(self):
+        pass
+    
     # Função para criar relação Treina
+    @staticmethod
     def criar_treina(Aluno: Aluno, Exercicios: Exercicios):
         connection = None
         
@@ -28,6 +32,7 @@ class GerenciadorTreina:
         
         
     # Funções para alterar dados
+    @staticmethod
     def alterar_aluno_id(id: int, novo_id: int):
         connection = None
         
@@ -48,6 +53,7 @@ class GerenciadorTreina:
             if connection is not None:
                 connection.close()
 
+    @staticmethod
     def alterar_exercicio_id(id: int, novo_id: int):
         connection = None
         
@@ -70,6 +76,7 @@ class GerenciadorTreina:
         
         
     # Funções para pesquisar dados
+    @staticmethod
     def pesquisar_por_id_aluno(aluno: Aluno):
         connection = None
         
@@ -88,6 +95,7 @@ class GerenciadorTreina:
             if connection is not None:
                 connection.close()  
 
+    @staticmethod
     def pesquisar_por_nome_exercicio(exercicio: Exercicios):
         connection = None
         
@@ -106,6 +114,7 @@ class GerenciadorTreina:
             if connection is not None:
                 connection.close()  
 
+    @staticmethod
     def pesquisar_por_tipo_treino(exercicio: Exercicios):
         connection = None
         
@@ -123,7 +132,8 @@ class GerenciadorTreina:
         finally:
             if connection is not None:
                 connection.close()  
-        
+     
+    @staticmethod   
     def pesquisar_por_nome_aluno(aluno: Aluno):
         connection = None
         
@@ -142,6 +152,7 @@ class GerenciadorTreina:
             if connection is not None:
                 connection.close()  
 
+    @staticmethod
     def pesquisar_por_tecnica_avancada(exercicio: Exercicios):
         connection = None
         
@@ -163,6 +174,7 @@ class GerenciadorTreina:
         
         
     # Funções para remover dados
+    @staticmethod
     def deletar_por_id_aluno(aluno: Aluno):
         connection = None
         
@@ -183,6 +195,7 @@ class GerenciadorTreina:
 
 
     # Função para listar tudo
+    @staticmethod
     def listar_treino_aluno(nome: str):
         connection = None
         
