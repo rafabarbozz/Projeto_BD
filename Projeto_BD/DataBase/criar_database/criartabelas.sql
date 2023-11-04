@@ -62,6 +62,6 @@ CREAT OR REPLACE PROCEDURE AddExer(
 LANGUAGE SQL
 BEGIN ATOMIC
     INSERT INTO exercicios (nome_exercicio, qtd_series, qtd_reps, tempo_descanso, tecnica_avancada, tipo_treino) 
-	VALUES (ExerNome, ExerSerie, ExerRep, ExerTempo, ExerTecnica, ExerTipo);
+	VALUES (ExerNome, ExerSerie, ExerRep, ExerTempo, ExerTecnica, ExerTipo) RETURNING *;
 	
 END;
