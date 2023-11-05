@@ -51,17 +51,11 @@ CREATE OR REPLACE VIEW treino_aluno AS
         ON treina.exercicio_id = exercicios.id_exercicio
     
 
-CREAT OR REPLACE PROCEDURE AddExer(
-	ExerNome text,
-	ExerSerie integer,
-	ExerRep integer,
-	ExerTempo integer,
-	ExerTecnica text,
-	ExerTipo char(1)
-)
-LANGUAGE SQL
-BEGIN ATOMIC
-    INSERT INTO exercicios (nome_exercicio, qtd_series, qtd_reps, tempo_descanso, tecnica_avancada, tipo_treino) 
-	VALUES (ExerNome, ExerSerie, ExerRep, ExerTempo, ExerTecnica, ExerTipo) RETURNING *;
-	
-END;
+CREATE OR REPLACE PROCEDURE atualizar_nome_exer(antigo_nome TEXT, novo_nome TEXT)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    UPDATE exercicios
+	SET nome_exercicio = novo_nome
+	WHERE nome_exercicio = antigo_nome;
+END $$;
