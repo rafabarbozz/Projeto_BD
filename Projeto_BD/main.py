@@ -58,6 +58,7 @@ while (continuaroperacao == 1):
                     tipo_treino = str(input("Digite o tipo do treino (A, B, C): "))
             
                 GerenciadorExercicio.criar_exercicio(nome_exercicio, qtd_series, qtd_reps, tempo_descanso, tecnica_avancada, tipo_treino)
+                print("Exercício adicionado com sucesso!")
                 
                 
         elif (opcao_exercicio == 2): # Remover dados
